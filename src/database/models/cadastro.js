@@ -42,6 +42,9 @@ module.exports.Cadastro = {
    async getReservaByCPF(cpf_cliente){
       return await knex.select('*').from('reserva').where('cpf_cliente', cpf_cliente)
    },
+   async getAllReservas(){
+      return knex.select('*').from('reserva')
+   },
    
    async createHospedagem(num_quarto, cpf_cliente, id_reserva, id_quarto){
       return await knex('hospedagem').insert({

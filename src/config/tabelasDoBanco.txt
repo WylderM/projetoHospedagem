@@ -1,0 +1,119 @@
+-- Table: public.cliente
+
+-- DROP TABLE public.cliente;
+
+CREATE TABLE public.cliente
+(
+    id_cliente integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    cpf character varying(15) COLLATE pg_catalog."default",
+    nome character varying(40) COLLATE pg_catalog."default",
+    telefone character varying(15) COLLATE pg_catalog."default",
+    CONSTRAINT cliente_pkey PRIMARY KEY (id_cliente)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.cliente
+    OWNER to postgres;
+
+
+-- Table: public.funcionario
+
+-- DROP TABLE public.funcionario;
+
+CREATE TABLE public.funcionario
+(
+    id_funcionario integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    cpf character varying(20) COLLATE pg_catalog."default",
+    cargo character varying(40) COLLATE pg_catalog."default",
+    nome character varying(40) COLLATE pg_catalog."default",
+    CONSTRAINT funcionario_pkey PRIMARY KEY (id_funcionario)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.funcionario
+    OWNER to postgres;
+
+-- Table: public.hospedagem
+
+-- DROP TABLE public.hospedagem;
+
+CREATE TABLE public.hospedagem
+(
+    id_hospedagem integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    num_quarto character varying(15) COLLATE pg_catalog."default",
+    cpf_cliente character varying(15) COLLATE pg_catalog."default",
+    id_reserva character varying(50) COLLATE pg_catalog."default",
+    id_quarto character varying(15) COLLATE pg_catalog."default",
+    CONSTRAINT hospedagem_pkey PRIMARY KEY (id_hospedagem)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.hospedagem
+    OWNER to postgres;
+
+-- Table: public.quarto
+
+-- DROP TABLE public.quarto;
+
+CREATE TABLE public.quarto
+(
+    id_quarto integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    numero character varying(15) COLLATE pg_catalog."default",
+    tipo character varying(20) COLLATE pg_catalog."default",
+    valor character varying(20) COLLATE pg_catalog."default",
+    status character varying(30) COLLATE pg_catalog."default",
+    CONSTRAINT quarto_pkey PRIMARY KEY (id_quarto)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.quarto
+    OWNER to postgres;
+
+
+-- Table: public.reserva
+
+-- DROP TABLE public.reserva;
+
+CREATE TABLE public.reserva
+(
+    id_reserva integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    checkin character varying(50) COLLATE pg_catalog."default",
+    checkout character varying(50) COLLATE pg_catalog."default",
+    cpf_cliente character varying(15) COLLATE pg_catalog."default",
+    nome_cliente character varying(200) COLLATE pg_catalog."default",
+    cpf_funcionario character varying(20) COLLATE pg_catalog."default",
+    nome_funcionario character varying(200) COLLATE pg_catalog."default",
+    num_quarto character varying(15) COLLATE pg_catalog."default",
+    telefone character varying(200) COLLATE pg_catalog."default",
+    CONSTRAINT reserva_pkey PRIMARY KEY (id_reserva)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.reserva
+    OWNER to postgres;
+
+
+-- Table: public.servico
+
+-- DROP TABLE public.servico;
+
+CREATE TABLE public.servico
+(
+    id_servico integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    num_quarto character varying(15) COLLATE pg_catalog."default",
+    valor character varying(20) COLLATE pg_catalog."default",
+    data_servico character varying(50) COLLATE pg_catalog."default",
+    cpf_funcionario character varying(20) COLLATE pg_catalog."default",
+    CONSTRAINT servico_pkey PRIMARY KEY (id_servico)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.servico
+    OWNER to postgres;
+

@@ -5,5 +5,6 @@ const relatorio = require('./controllers/relatorio.controller')
 
 route.post('/cadastro-funcionario', hospedagem.Funcionario)
 route.post('/cadastro-reserva', hospedagem.Reserva)
+route.get('/reservas', hospedagem.GetReserva)
 
 module.exports = route

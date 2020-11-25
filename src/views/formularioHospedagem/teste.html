@@ -1,186 +1,80 @@
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>HTML e CSS para Formulários: Sugestões</title>
-	<link href="base.css" rel="stylesheet">
-	<style>
-		h1 {
-			margin-bottom: 1rem;
-		}
-
-		* {
-			margin: 0;
-			padding: 0;
-		}
-
-		fieldset {
-			border: 0;
-		}
-
-		body, input, select, textarea, button {
-			font-family: sans-serif;
-			font-size: 1em;
-		}
-		
-		.grupo:before, .grupo:after {
-			content: " ";
-			display: table;
-		}
-		
-		.grupo:after {
-			clear: both;
-		}
-
-		.campo {
-			margin-bottom: 1em;
-		}
-
-		.campo label {
-			margin-bottom: 0.2em;
-			color: #666;
-			display: block;
-		}
-
-		fieldset.grupo .campo {
-			float:  left;
-			margin-right: 1em;
-		}
-
-		.campo input[type="text"],
-		.campo input[type="email"],
-		.campo input[type="url"],
-		.campo input[type="tel"],
-		.campo select,
-		.campo textarea {
-			padding: 0.2em;
-			border: 1px solid #CCC;
-			box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-			display: block;
-		}
-
-		.campo select option {
-			padding-right: 1em;
-		}
-
-		.campo input:focus, .campo select:focus, .campo textarea:focus {
-			background: #FFC;
-		}
-
-		.campo label.checkbox {
-			color: #000;
-			display: inline-block;
-			margin-right: 1em;
-		}
-
-		.botao {
-			font-size: 1.5em;
-			background: #F90;
-			border: 0;
-			margin-bottom: 1em;
-			color: #FFF;
-			padding: 0.2em 0.6em;
-			box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-			text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-		}
-
-		.botao:hover {
-			background: #FB0;
-			box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
-			text-shadow: none;
-		}
-
-		.botao, select, label.checkbox {
-			cursor: pointer;
-		}
-	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Document</title>
 </head>
 <body>
+<a href="http://localhost:4500/relatorio">Veja os relatórios</a>	
 
-<h1 style="margin-left: 3%;">Formulário Teste</h1>
+<form name="meu_form">
 
-<form style="margin-left: 3%;" action="#" method="post">
-<fieldset>
-	<fieldset class="grupo">
-     <div class="campo">
-			<label for="nome">Checkin</label>
-			<input type="date" id="nome" name="nome" style="width: 20em" value="" />
-		</div>
-    <div class="campo">
-			<label for="nome">Checkout</label>
-			<input type="date" id="nome" name="nome" style="width: 20em" value="" />
-		</div>
-  </fieldset>
-	
-  <fieldset class="grupo">
-		<div class="campo">
-			<label for="nome">Nome do cliente</label>
-			<input type="text" id="nome" name="nome" style="width: 20em" value="" />
-		</div>
-		<div class="campo">
-			<label for="snome">Telefone do cliente</label>
-			<input type="text" id=tel name="tel" style="width: 20em" value="" />
-		</div>
-    	<div class="campo">
-			<label for="snome">CPF do cliente</label>
-			<input type="text" id="cpf" name="cpf" style="width: 20em" value="" />
-		</div>
-	</fieldset>	
-	
-	<fieldset class="grupo">
-		<div class="campo">
-			<label for="estado">Número do quarto</label>
-			<select name="estado" id="estado">
-				<option value="">--</option>
-				<option value="um">1</option>
-        <option value="dois">2</option>
-        <option value="tres">3</option>
-        <option value="quatro">4</option>
-        <option value="cinco">5</option>
-        <option value="seis">6</option>
-        <option value="sete">7</option>
-        <option value="oito">8</option>
-        <option value="nove">9</option>
-        <option value="dez">10</option>
-			</select>
-		</div>
-		<div class="campo">
-			<label for="estado">Tipo do quarto</label>
-			<select name="estado" id="estado">
-				<option value="">--</option>
-				<option value="simples">Simples</option>
-        <option value="suite">Suíte</option>
-        <option value="luxo">Luxo</option>
-			</select>
-		</div>
-    <div class="campo">
-			<label for="estado">Status</label>
-			<select name="statusQuarto" id="statusQuarto">
-				<option value="">--</option>
-				<option value="disponivel">Dispoível</option>
-        <option value="ocupado">Ocupado</option>
-        <option value="reservado">Reservado</option>
-			</select>
-		</div>
-    <div class="campo">
-        <label for="estado">Valor do Quarto</label>
-		    <input class="money" id="input" type="text">
-	  </div>
-	</fieldset>
-  <fieldset class="grupo">
-    <div class="campo">
-        <label for="estado">Valor do Serviço</label>
-		    <input class="money" id="input" type="text">
-	  </div>
-  	<div class="campo">
-      <label for="estado">Data do Serviço</label>
-		  <input type="date" id="dataServico" name="dataServico" style="width: 20em" value="" />
-	  </div>
-  </fieldset>
-
-	<button class="botao submit" type="submit" name="submit">Enviar</button>
-	
-</fieldset>
+  <h1>Entre em contato</h1>
+	   <label for="Checkin">Checkin</label>
+		<input type="date" id="Checkin" name="Checkin" />
+	   <label for="Checkout">Checkout</label>
+		<input type="date" id="Checkout" name="Checkout" />
+	   <label for="nome">Nome do cliente</label>
+		<input type="text" id="nome" name="nome" />
+	   <label for="cpf">CPF do Cliente</label>
+		<input type="text" id="cpf" name="cpf" />
+	   <label for="fone">Telefone do Cliente</label>
+		<input type="text" id="fone" name="fone" />
+	   <label for="numQuarto">Número do quarto</label>
+		<input type="text" id="numQuarto" name="numQuarto" />
+	   <label for="tipoQuarto">Tipo de quarto</label>
+		<input type="text" id="tipoQuarto" name="tipoQuarto" />
+	   <label for="valorQuarto">Valor do quarto</label>
+		<input type="text" id="valorQuarto" name="valorQuarto" />
+	   <label for="statusQuarto">Status Quarto</label>
+		<input type="text" id="statusQuarto" name="statusQuarto" />
+	   <label for="valorServico">Valor do Serviço</label>
+		<input type="text" id="valorServico" name="valorServico" />
+	   <label for="dataServico">Data do Serviço</label>
+		<input type="date" id="dataServico" name="dataServico" />
+		
+		<input type="submit" class="enviar" onclick="Enviar();" value="Enviar" />
 </form>
+	<script>
+		function Enviar() {
 
+			var Checkin = document.getElementById("Checkin");
+			var Checkout = document.getElementById("Checkout");
+			var nome = document.getElementById("nome");
+			var cpf = document.getElementById("cpf");
+			var fone = document.getElementById("fone");
+			var numQuarto = document.getElementById("numQuarto");
+			var tipoQuarto = document.getElementById("tipoQuarto");
+			var valorQuarto = document.getElementById("valorQuarto");
+			var statusQuarto = document.getElementById("statusQuarto");
+			var valorServico = document.getElementById("valorServico");
+			var dataServico = document.getElementById("dataServico");
+	 		var data = {
+				"checkin":`${Checkin.value}`,
+				"checkout":`${Checkout.value}`,
+				"cpf_cliente":`${nome.value}`,
+				"nome_cliente":`${cpf.value}`,
+				"telefone_cliente":`${fone.value}`,
+				"num_quarto":`${numQuarto.value}`,
+				"tipo_quarto":`${tipoQuarto.value}`,
+				"valor_quarto":`${valorQuarto.value}`,
+				"status_quarto":`${statusQuarto.value}`,
+				"valor_servico":`${valorServico.value}`,
+				"data_servico":`${dataServico.value}`
+			}
+			var success = alert("Reserva realizada com sucesso!")
+			$.ajax({
+				type: "POST",
+				url: "http://localhost:4500/cadastro-reserva",
+				data: data,
+				success: success,
+				// // dataType: dataType
+			})
+
+   
+}
+	</script>	
 </body>
 </html>

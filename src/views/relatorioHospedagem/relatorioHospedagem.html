@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <title>Document</title>
+</head>
+<body>
+   <input type="button" onclick="relatorio()" value="Relatórios"/>
+   <script>
+      function relatorio(){
+         $.get( "http://localhost:4500/reservas", function( data ) {
+         $( ".result" ).html( data );
+            console.log(data)
+         });
+      }
+      
+   </script>
+</body>
+</html>

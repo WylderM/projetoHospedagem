@@ -16,6 +16,20 @@ module.exports.Funcionario = async function(req, res, next){
    await cadastro.cadastrarFuncionarios(cpf, cargo, nome)
    res.json({"mensagem":"Funcionário cadastrado com sucesso!"})
 }
+module.exports.GetReserva = async function(req, res, next){
+   try{
+      function reservas(){
+         let reserva = cadastro.getAllReservas()
+         reserva.then(function(result){
+            res.send(result)
+         })
+
+      }
+     reservas()
+   }catch(error){
+      console.log(error)
+   }
+}
 
 module.exports.Reserva = async function(req, res, next){
    try{
@@ -55,6 +69,7 @@ module.exports.Reserva = async function(req, res, next){
       }, 3000)
    }
    createHospedagem()
+   
       res.json({"mensagem":"Reserva efetuada com sucesso!"})
    }catch(error){
       res.json({"ERRO":"não foi possível efetuar reserva"})

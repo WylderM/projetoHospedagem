@@ -21,10 +21,13 @@ HOST = '0.0.0.0'
 
 //Rotas
 app.use('/', require('./routes'))
-
+app.use(express.static(__dirname + '/public'));
 //views rotas
 app.get('/', function(req, res){
 	res.sendFile(__dirname + '/views/formularioHospedagem/teste.html')
+})
+app.get('/relatorio', function(req, res){
+	res.sendFile(__dirname + '/views/relatorioHospedagem/relatorioHospedagem.html')
 })
 
 //Server externo
